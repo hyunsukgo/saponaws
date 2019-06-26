@@ -40,7 +40,7 @@ HANA\(High Performance analytic Appliance\) : SAP in-memory DB
 
 {% tabs %}
 {% tab title="EC2" %}
-각각의 서비스들이 설치되는 환
+각각의 서비스들이 설치되는 환경
 {% endtab %}
 
 {% tab title="EFS" %}
@@ -48,23 +48,23 @@ HANA\(High Performance analytic Appliance\) : SAP in-memory DB
 {% endtab %}
 
 {% tab title="EBS" %}
- 파일들이 설치될 디스크 볼
+ 파일들이 설치될 디스크 볼륨
 {% endtab %}
 
 {% tab title="S3" %}
-데이터 백업 용도로 사
+데이터 백업 용도로 사용
 {% endtab %}
 
 {% tab title="SSM" %}
-Session Manager등 시스템 관리를 위한 AWS 서비
+Session Manager등 시스템 관리를 위한 AWS 서비스
 {% endtab %}
 
 {% tab title="AppStream 2.0" %}
-어플리케이션 가상화 : 주로 SAPGUI 연동에 사
+어플리케이션 가상화 : 주로 SAPGUI 연동에 사용
 {% endtab %}
 
 {% tab title="VPN" %}
-Op-Premise 환경에서 접근하기 위
+Op-Premise 환경에서 접근하기 위하여 사용
 {% endtab %}
 
 {% tab title="VPC Peering" %}
