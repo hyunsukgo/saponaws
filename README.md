@@ -40,11 +40,11 @@ HANA\(High Performance analytic Appliance\) : SAP in-memory DB
 
 {% tabs %}
 {% tab title="EC2" %}
-각각의 서비스들이 설치되는 환경
+SAP 서비스들이 구동 되는 VM 환경. SAP 구성에 따라 수량등이 변경
 {% endtab %}
 
 {% tab title="EFS" %}
-사용할 라이브러리나 명령어들을 공유하기 위해 사용
+사용할 라이브러리나 명령어들을 공유하기 위해 사용.
 {% endtab %}
 
 {% tab title="EBS" %}
@@ -52,7 +52,7 @@ HANA\(High Performance analytic Appliance\) : SAP in-memory DB
 {% endtab %}
 
 {% tab title="S3" %}
-데이터 백업 용도로 사용
+데이터 백업 용도로 사용, 혹은 로그들을 저장
 {% endtab %}
 
 {% tab title="SSM" %}
@@ -60,15 +60,15 @@ Session Manager등 시스템 관리를 위한 AWS 서비스
 {% endtab %}
 
 {% tab title="AppStream 2.0" %}
-어플리케이션 가상화 : 주로 SAPGUI 연동에 사용
+어플리케이션 Streaming  : 주로 SAPGUI 연동에 사용
 {% endtab %}
 
 {% tab title="VPN" %}
-Op-Premise 환경에서 접근하기 위하여 사용
+Op-Premise 환경에서 접근하기 위하여 사용, 서울 리전의 경우 IPSEC VPN만 지
 {% endtab %}
 
 {% tab title="VPC Peering" %}
-VPC 간 통신을 위하여 설정
+VPC 간 통신을 위하여 설정, 다중 VPC 연결 시 Full Mesh를 원한다면 Transit VPC등을 고려해야 
 {% endtab %}
 {% endtabs %}
 
