@@ -126,7 +126,7 @@
  "route53:ListResourceRecordSets",
  "route53:ChangeResourceRecordSets"
  ],
- "Resource": "arn:aws:route53:::hostedzone/hosted zone ID"
+ "Resource": "arn:aws:route53:::<blockquote>hostedzone/hosted zone ID"\<\/blockquote\>
  }
  ]
 }
