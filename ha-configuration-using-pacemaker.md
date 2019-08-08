@@ -23,7 +23,7 @@
 
 #### AWS Data Provider Policy
 
-```text
+```yaml
 {
 	 "Statement": [
 		 {
@@ -50,7 +50,7 @@
 
 #### STONITH Policy
 
-```text
+```yaml
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -84,7 +84,7 @@
 
 #### Overlay IP Agent Policy
 
-```text
+```yaml
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -103,7 +103,7 @@
 
 #### Route 53 Updates
 
-```text
+```yaml
 {
           "Version": "2012-10-17",
           "Statement": [
@@ -156,7 +156,7 @@ crm명령어나 sle-ha 명령어를 이용하여 조인 가능하지만, 그렇�
 
 > nodelist아래 IP 영역에 이중화할 노드들의 Private IP를 기입하시고 설정해주시면 됩니다.
 
-```text
+```yaml
 # Please read the corosync.conf.5 manual page
 totem {
  version: 2
@@ -221,7 +221,7 @@ crm status
 
 #### Preparing the Cluster for adding the resources
 
-#### 클러스터 노드에 리소스 매핑을 위하여 Maintenance 모드로 변경
+#### 클러스터 노드에 리소스 핑을 위하여 Maintenance 모드로 변경
 
 ```text
 crm configure property maintenance-mode="true"
@@ -231,7 +231,7 @@ crm configure property maintenance-mode="true"
 
 #### stonith 모니터링 설정
 
-```text
+```yaml
 property cib-bootstrap-options: \
  stonith-enabled="true" \
  stonith-action="poweroff" \
@@ -248,7 +248,7 @@ op_defaults op-options: \
 
 #### 인스턴스 모니터링, tag 및 aws cli 설정을 기반으로 확인
 
-```text
+```yaml
 primitive res_AWS_STONITH stonith:external/ec2 \
 op start interval=0 timeout=180 \
 op stop interval=0 timeout=180 \
@@ -266,7 +266,7 @@ params tag=pacemaker profile=cluster
 
 * ASCS 실행에 필요한 EFS 경로, VIP, 어플리케이션 실행 상태를 모니터링
 
-```text
+```yaml
 primitive rsc_fs_HA1_ASCS00 Filesystem \
 	 params device="efs-name:/ASCS00" directory="/usr/sap/HA1/ASCS00" \
 	 fstype="nfs4" \
@@ -297,7 +297,7 @@ migration-threshold=1 priority=10
 * hostedzoneid : ZONE ID \(route 53 콘솔에서 확인 가능\)
 {% endhint %}
 
-```text
+```yaml
 primitive rsc_r53_HA1_ASCS00 ocf:heartbeat:aws-vpc-route53 \
 	 params hostedzoneid=route-53-name ttl=10 fullname=name-full. profile=cluster \
 	 op start interval=0 timeout=180 \
