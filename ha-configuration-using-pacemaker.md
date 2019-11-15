@@ -15,7 +15,7 @@
   aws configure --profile=cluster
   ```
 
-### IAM Role and Policy 
+### IAM Role and Policy
 
 {% hint style="info" %}
 이중화 설정할 EC2에 맵핑할 IAM Role을 구성해야합니다.
@@ -25,27 +25,27 @@
 
 ```yaml
 {
-	 "Statement": [
-		 {
-		 "Effect": "Allow",
-		 "Action": [
-			 "EC2:DescribeInstances",
-			 "EC2:DescribeVolumes"
-			 ],
-				 "Resource": "*"
-			 },
-		 {
-			 "Effect": "Allow",
-			 "Action": "cloudwatch:GetMetricStatistics",
-			 "Resource": "*"
-		 },
-		 {
-			 "Effect": "Allow",
-			 "Action": "s3:GetObject",
-			 "Resource": "arn:aws:s3:::aws-data-provider/config.properties"
-		 }
-	 ]
-	}
+     "Statement": [
+         {
+         "Effect": "Allow",
+         "Action": [
+             "EC2:DescribeInstances",
+             "EC2:DescribeVolumes"
+             ],
+                 "Resource": "*"
+             },
+         {
+             "Effect": "Allow",
+             "Action": "cloudwatch:GetMetricStatistics",
+             "Resource": "*"
+         },
+         {
+             "Effect": "Allow",
+             "Action": "s3:GetObject",
+             "Resource": "arn:aws:s3:::aws-data-provider/config.properties"
+         }
+     ]
+    }
 ```
 
 #### STONITH Policy
@@ -206,7 +206,7 @@ quorum {
 ```
 
 {% hint style="info" %}
-&lt;ip-node-1&gt;,&lt;ip-node-2&gt; 은 실제 설정된 IP로 변경해야 합니다. \(가상 IP X 
+&lt;ip-node-1&gt;,&lt;ip-node-2&gt; 은 실제 설정된 IP로 변경해야 합니다. \(가상 IP X
 {% endhint %}
 
 아래 명령어로 cluster 현황을 파악 할 수 있습니다.
@@ -268,25 +268,25 @@ params tag=pacemaker profile=cluster
 
 ```yaml
 primitive rsc_fs_HA1_ASCS00 Filesystem \
-	 params device="efs-name:/ASCS00" directory="/usr/sap/HA1/ASCS00" \
-	 fstype="nfs4" \
-	 options="rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2" \
-	 op start timeout=60s interval=0 \
-	 op stop timeout=60s interval=0 \
-	 op monitor interval=200s timeout=40s
+     params device="efs-name:/ASCS00" directory="/usr/sap/HA1/ASCS00" \
+     fstype="nfs4" \
+     options="rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2" \
+     op start timeout=60s interval=0 \
+     op stop timeout=60s interval=0 \
+     op monitor interval=200s timeout=40s
 primitive rsc_ip_HA1_ASCS00 ocf:suse:aws-vpc-move-ip \
-	 params address=192.168.201.116 routing_table=rtb-table \
-	 interface=eth0 profile=cluster \
-	 op start interval=0 timeout=180 \
-	 op stop interval=0 timeout=180 \
-	 op monitor interval=60 timeout=60
+     params address=192.168.201.116 routing_table=rtb-table \
+     interface=eth0 profile=cluster \
+     op start interval=0 timeout=180 \
+     op stop interval=0 timeout=180 \
+     op monitor interval=60 timeout=60
 primitive rsc_sap_HA1_ASCS00 SAPInstance \
-	 operations $id=rsc_sap_HA1_ASCS00-operations \
-	 op monitor interval=120 timeout=60 on_fail=restart \
-	 params InstanceName=HA1_ASCS00_sapha1as \
-	 START_PROFILE="/sapmnt/HA1/profile/HA1_ASCS00_sapha1as" \
-	 AUTOMATIC_RECOVER=false \
-	 meta resource-stickiness=5000 failure-timeout=60 \
+     operations $id=rsc_sap_HA1_ASCS00-operations \
+     op monitor interval=120 timeout=60 on_fail=restart \
+     params InstanceName=HA1_ASCS00_sapha1as \
+     START_PROFILE="/sapmnt/HA1/profile/HA1_ASCS00_sapha1as" \
+     AUTOMATIC_RECOVER=false \
+     meta resource-stickiness=5000 failure-timeout=60 \
 migration-threshold=1 priority=10
 ```
 
@@ -299,44 +299,44 @@ migration-threshold=1 priority=10
 
 ```yaml
 primitive rsc_r53_HA1_ASCS00 ocf:heartbeat:aws-vpc-route53 \
-	 params hostedzoneid=route-53-name ttl=10 fullname=name-full. profile=cluster \
-	 op start interval=0 timeout=180 \
-	 op stop interval=0 timeout=180 \
-	 op monitor interval=300 timeout=180
+     params hostedzoneid=route-53-name ttl=10 fullname=name-full. profile=cluster \
+     op start interval=0 timeout=180 \
+     op stop interval=0 timeout=180 \
+     op monitor interval=300 timeout=180
 ```
 
 #### Configure the Resources for the ERS
 
 ```text
 primitive rsc_fs_HA1_ERS10 Filesystem \
-	 params device="efs-name:/ERS10" directory="/usr/sap/HA1/ERS10" fstype=nfs4 \
-	 options="rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2" \
-	 op start timeout=60s interval=0 \
-	 op stop timeout=60s interval=0 \
-	 op monitor interval=200s timeout=40s
+     params device="efs-name:/ERS10" directory="/usr/sap/HA1/ERS10" fstype=nfs4 \
+     options="rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2" \
+     op start timeout=60s interval=0 \
+     op stop timeout=60s interval=0 \
+     op monitor interval=200s timeout=40s
 primitive rsc_ip_HA1_ERS10 ocf:suse:aws-vpc-move-ip \
-	 params address=192.168.201.117 routing_table=rtb-table \
-	 interface=eth0 profile=cluster \
-	 op start interval=0 timeout=180 \
-	 op stop interval=0 timeout=180 \
-	 op monitor interval=60 timeout=60
+     params address=192.168.201.117 routing_table=rtb-table \
+     interface=eth0 profile=cluster \
+     op start interval=0 timeout=180 \
+     op stop interval=0 timeout=180 \
+     op monitor interval=60 timeout=60
 primitive rsc_sap_HA1_ERS10 SAPInstance \
-	 operations $id=rsc_sap_HA1_ERS10-operations \
-	 op monitor interval=120 timeout=60 on_fail=restart \
-	 params InstanceName=HA1_ERS10_sapha1er \
-	 START_PROFILE="/sapmnt/HA1/profile/HA1_ERS10_sapha1er" \
-	 AUTOMATIC_RECOVER=false IS_ERS=true \
-	 meta priority=1000
+     operations $id=rsc_sap_HA1_ERS10-operations \
+     op monitor interval=120 timeout=60 on_fail=restart \
+     params InstanceName=HA1_ERS10_sapha1er \
+     START_PROFILE="/sapmnt/HA1/profile/HA1_ERS10_sapha1er" \
+     AUTOMATIC_RECOVER=false IS_ERS=true \
+     meta priority=1000
 ```
 
 #### Configure the Colocation Constraints between ASCS and ERS
 
 ```text
 colocation col_sap_HA1_no_both -5000: grp_HA1_ERS10 grp_HA1_ASCS00
-	location loc_sap_HA1_failover_to_ers rsc_sap_HA1_ASCS00 \
-	 rule 2000: runs_ers_HA1 eq 1
-	order ord_sap_HA1_first_start_ascs Optional: rsc_sap_HA1_ASCS00:start \
-	 rsc_sap_HA1_ERS10:stop symmetrical=false
+    location loc_sap_HA1_failover_to_ers rsc_sap_HA1_ASCS00 \
+     rule 2000: runs_ers_HA1 eq 1
+    order ord_sap_HA1_first_start_ascs Optional: rsc_sap_HA1_ASCS00:start \
+     rsc_sap_HA1_ERS10:stop symmetrical=false
 ```
 
 #### 최종 적인 hawk 대시 보드 상태
