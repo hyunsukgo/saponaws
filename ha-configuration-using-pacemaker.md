@@ -134,7 +134,7 @@
 
 ### Overlay IP Addresses 라우팅 테이블 추가
 
-![](.gitbook/assets/image%20%28115%29.png)
+![](.gitbook/assets/image%20%28117%29.png)
 
 ### Enable Cluster Instances to use the Overlay IP
 
@@ -146,7 +146,7 @@ ip address add OVERLAY-IP dev eth0
 
 ### Disable the Source/Destination Check
 
-![](.gitbook/assets/image%20%2835%29.png)
+![](.gitbook/assets/image%20%2837%29.png)
 
 ### Corosync Configuration
 
@@ -215,7 +215,7 @@ quorum {
 crm status
 ```
 
-![](.gitbook/assets/image%20%2815%29.png)
+![](.gitbook/assets/image%20%2816%29.png)
 
 ### Configure Cluster Resources
 
@@ -341,9 +341,9 @@ colocation col_sap_HA1_no_both -5000: grp_HA1_ERS10 grp_HA1_ASCS00
 
 #### 최종 적인 hawk 대시 보드 상태
 
-![](.gitbook/assets/image%20%284%29.png)
+![](.gitbook/assets/image%20%285%29.png)
 
-![](.gitbook/assets/image%20%2879%29.png)
+![](.gitbook/assets/image%20%2881%29.png)
 
 ## HANA DB Cluster
 
@@ -484,5 +484,5 @@ crm status
 
 #### 설정 완료 화면
 
-![](.gitbook/assets/image%20%28113%29.png)
+![](.gitbook/assets/image%20%28115%29.png)
 

@@ -12,13 +12,13 @@ SAP구축전 고객과 협의하여 사용한 VPC CIDR대역과 이중화 여부
 
 VPC는 인프라가 올라게 될 기본적인 환경입니다. 추후 확장성 및 연동을 고려하여 CIDR 및 서브넷팅을 설계하시길 바랍니다.
 
-![VPC &#xCF58;&#xC194; &#xC811;&#xC18D;](.gitbook/assets/image%20%2821%29.png)
+![](.gitbook/assets/image%20%2823%29.png)
 
-![VPC &#xCF58;&#xC194; &#xC811;&#xC18D;](.gitbook/assets/image%20%28116%29.png)
+![VPC &#xC120;&#xD0DD;](.gitbook/assets/image-2.png)
 
-![Create VPC](.gitbook/assets/image%20%28106%29.png)
+![Create VPC](.gitbook/assets/image-3%20%281%29.png)
 
-![VPC &#xC124;&#xC815; &#xAC12; &#xC785;&#xB825; &#xD6C4; &#xC0DD;&#xC131;](.gitbook/assets/image%20%289%29.png)
+![](.gitbook/assets/image-4.png)
 
 {% hint style="info" %}
 Name Tag : VPC 이름, Tag 의 Name값이라고 생각하면 됨 \(추후에 변경 가능\)  
@@ -28,14 +28,14 @@ IPv4 CIDE block : VPC에서 사용 할 CIDR 대역 자세한 설명은 아래 �
 
 ### Subnet생성
 
-![Subnet&#xC0DD;&#xC131;](.gitbook/assets/image%20%2878%29.png)
+![Create subnet](.gitbook/assets/image-5%20%281%29.png)
 
 {% hint style="info" %}
 VPC를 생성하면 생성된 VPC에 사용할 수 있는 서브넷이 없기 때문에 새로 생성해주어야 합니다.  
 용도에 맞게 네이밍과 크기를 정하시는 것이 중요합니다.
 {% endhint %}
 
-![Subnet &#xC0DD;&#xC131;](.gitbook/assets/image%20%2887%29.png)
+![](.gitbook/assets/image-6.png)
 
 {% hint style="info" %}
 Name Tag : Subnet 구분할 수 있는 Name Tab \(예: megazone-public-sb-a:고객명-용도-서브넷-AZ표\)  
@@ -44,7 +44,7 @@ Availability Zone : 서브넷이 사용 할 AZ 설정
 IPv4 CIDR block : 사용할 IP CIDR 설정 \(최소 28비트\) : 사용할 인스턴스들을 고려하여 넉넉하게 설정할 것을 권고 합니다. \(추후 변경 불가\)
 {% endhint %}
 
-![Subnet &#xC0DD;&#xC131; &#xC644;&#xB8CC;](.gitbook/assets/image%20%2819%29.png)
+![](.gitbook/assets/image-7%20%281%29.png)
 
 ### Routing Table 생성
 
@@ -58,9 +58,9 @@ Routing Table은 외부와의 통신을 어떤 게이트웨이를 통하게 할�
 * 라우팅 테이블 생성 시 기본적으로 VPC내부에 대한 라우팅은 Default하게 생성되어 있습니다. 
 {% endhint %}
 
-![Routing Table &#xC0DD;&#xC131;](.gitbook/assets/image%20%2864%29.png)
+![Routing Table &#xC0DD;&#xC131;](.gitbook/assets/image-8%20%281%29.png)
 
-![Routing Table &#xC0DD;&#xC131;](.gitbook/assets/image%20%28110%29.png)
+![Routing Table &#xC0DD;&#xC131;](.gitbook/assets/image-9%20%281%29.png)
 
 {% hint style="info" %}
 * Name Tag : 라우팅 테이블의 이름
@@ -69,19 +69,19 @@ Routing Table은 외부와의 통신을 어떤 게이트웨이를 통하게 할�
 
 ### Internet Gateway생성
 
-![Internet Gateway &#xC0DD;&#xC131;](.gitbook/assets/image%20%2888%29.png)
+![Internet Gateway&#xC0DD;&#xC131;](.gitbook/assets/image-10%20%281%29.png)
 
 {% hint style="info" %}
 Internet Gateway는 생성 후 생성한 VPC에 Attach 시켜줘야 사용할 수 있습니다.
 {% endhint %}
 
-![IGW &#xC0DD;&#xC131; &#xC644;&#xB8CC;](.gitbook/assets/image%20%2871%29.png)
+![Internet Gateway&#xC0DD;&#xC131;](.gitbook/assets/image-11%20%281%29.png)
 
-![Attach VPC](.gitbook/assets/image%20%28117%29.png)
+![Attach VPC](.gitbook/assets/image-12%20%281%29.png)
 
-![Attach VPC](.gitbook/assets/image%20%2812%29.png)
+![Attach VPC](.gitbook/assets/image-13.png)
 
-![Attach VPC](.gitbook/assets/image%20%2894%29.png)
+![Attach VPC](.gitbook/assets/image-14%20%281%29.png)
 
 ### NAT Gateway 생성
 
@@ -89,15 +89,15 @@ Internet Gateway는 생성 후 생성한 VPC에 Attach 시켜줘야 사용할 �
 NAT Gateway의 경우 IGW를 타는 라우팅 테이블\(외부통신이 가능한\)이 설정된 Subnet에 생성해야합니다.
 {% endhint %}
 
-![Create NAT Gateway](.gitbook/assets/image%20%28118%29.png)
+![NAT Gateway &#xC0DD;&#xC131;](.gitbook/assets/image-15%20%281%29.png)
 
-![&#xC11C;&#xBE0C;&#xB137; &#xC120;&#xD0DD;](.gitbook/assets/image%20%28105%29.png)
+![](.gitbook/assets/image-16.png)
 
-![NAT&#xC758; &#xACF5;&#xC778;IP\(EIP\) &#xC0DD;&#xC131;](.gitbook/assets/image%20%2829%29.png)
+![](.gitbook/assets/image-17.png)
 
-![Create NAT Gateway](.gitbook/assets/image%20%2834%29.png)
+![](.gitbook/assets/image-18.png)
 
-![&#xC0DD;&#xC131; &#xC644;&#xB8CC;](.gitbook/assets/image%20%2866%29.png)
+![](.gitbook/assets/image-19%20%281%29.png)
 
 ### Routing Table 수정
 
@@ -106,43 +106,41 @@ IGW,NAT를 생성하고 나서는 각각 Routing Table에 매칭해줘야 사용
 물론 Routing 테이블에 적용 후 각 Subnet들을 용도에 맞게 Association 해주시는 것도 좋습니다.
 {% endhint %}
 
-![&#xBBF8;&#xB9C1; &#xC0DD;&#xC131;&#xD574;&#xB454; &#xB77C;&#xC6B0;&#xD305; &#xD14C;&#xC774;&#xBE14;](.gitbook/assets/image%20%2875%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-20%20%281%29.png)
 
-![Routing Table &#xC218;&#xC815;](.gitbook/assets/image%20%2857%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-21.png)
 
-![](.gitbook/assets/image%20%2855%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-22.png)
 
-![](.gitbook/assets/image%20%2811%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-23%20%281%29.png)
 
-![](.gitbook/assets/image%20%287%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-24.png)
 
-![](.gitbook/assets/image%20%2848%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-25.png)
 
-![](.gitbook/assets/image%20%2818%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-26.png)
 
-![](.gitbook/assets/image%20%28109%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-27.png)
 
-![](.gitbook/assets/image%20%28111%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-28.png)
 
-![](.gitbook/assets/image%20%2890%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image%20%281%29.png)
 
-![](.gitbook/assets/image%20%2841%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-2%20%281%29.png)
 
-![](.gitbook/assets/image%20%2827%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-3.png)
 
-![](.gitbook/assets/image%20%2826%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-5.png)
 
-![](.gitbook/assets/image%20%2824%29.png)
-
-![](.gitbook/assets/image%20%28112%29.png)
+![Routing Table &#xC218;&#xC815;](.gitbook/assets/image-6%20%281%29.png)
 
 ### Security Group 생성
 
-![](.gitbook/assets/image%20%2844%29.png)
+![Security Group &#xC0DD;&#xC131;](.gitbook/assets/image-7.png)
 
-![](.gitbook/assets/image%20%2882%29.png)
+![Security Group &#xC0DD;&#xC131;](.gitbook/assets/image-8.png)
 
-![](.gitbook/assets/image%20%2891%29.png)
+![Security Group &#xC0DD;&#xC131;](.gitbook/assets/image-9.png)
 
 {% hint style="info" %}
 Inbound/Outbound 정책은 아래 AWS 정식 가이드 참고 하시기 바랍니다. Source IP는 예시입니다.  
@@ -212,11 +210,11 @@ SAP A1의 경우 대부분 SuSE 혹은 Redhat 환경으로 운영되고 있습�
 
 ### SLES \(SuSE Linux Enterprise Linux\)
 
-![SUSE Linux Enterprise Linux](.gitbook/assets/image%20%2880%29.png)
+![SUSE Linux Enterprise Linux](.gitbook/assets/image%20%2882%29.png)
 
 ### SuSe for SAP
 
-![SUSE Linux enterprisse for SAP](.gitbook/assets/image%20%28120%29.png)
+![SUSE Linux enterprisse for SAP](.gitbook/assets/image%20%28122%29.png)
 
 {% hint style="info" %}
 두 이미지의 차이는 For SAP의 경우 SAP 운영을 위한 환경 변수들\(sapconf,env\)이 기본적으로 설정되어 있고  어플리케이션 업데이트를 위한 Repository가 다르게 설정되어 있습니다.  
@@ -225,13 +223,13 @@ SAP A1의 경우 대부분 SuSE 혹은 Redhat 환경으로 운영되고 있습�
 
 ### 인스턴스 설치
 
-![Launch Instance](.gitbook/assets/image%20%2852%29.png)
+![Launch Instance](.gitbook/assets/image-10.png)
 
 #### AMI 선
 
-![AMI &#xC120;&#xD0DD; \(&#xB370;&#xBAA8;&#xC5D0;&#xC11C;&#xB294; 12 SP4\)](.gitbook/assets/image%20%2843%29.png)
+![](.gitbook/assets/image-11.png)
 
-![](.gitbook/assets/image%20%2830%29.png)
+![](.gitbook/assets/image-12.png)
 
 {% hint style="info" %}
 이미지에 따라 선택할 수 있는 인스턴스 타입이 조금 씩 달라지게 됩니다.
@@ -242,9 +240,9 @@ SAP A1의 경우 대부분 SuSE 혹은 Redhat 환경으로 운영되고 있습�
 
 #### 인스턴스 타입 선
 
-![](.gitbook/assets/image%20%2863%29.png)
+![](.gitbook/assets/image-13%20%281%29.png)
 
-![&#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD0C0;&#xC785; &#xC120;&#xD0DD;](.gitbook/assets/image%20%2840%29.png)
+![](.gitbook/assets/image-14.png)
 
 {% hint style="info" %}
 인스턴스 선택 시 ASCS,ERS의 경우 가벼운 시스템이기 때문에 t3,t2로 가도 무방합니다.  
@@ -254,7 +252,7 @@ SAP A1의 경우 대부분 SuSE 혹은 Redhat 환경으로 운영되고 있습�
 
 #### Configuration Instance Details
 
-![&#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xC124;&#xC815;\(&#xD544;&#xC694;&#xD55C; &#xBD80;&#xBD84;&#xB9CC;\)](.gitbook/assets/image%20%2814%29.png)
+![](.gitbook/assets/image-15.png)
 
 {% hint style="info" %}
 * Network : 인스턴스가 설치될 VPC선택
@@ -269,13 +267,13 @@ SAP A1의 경우 대부분 SuSE 혹은 Redhat 환경으로 운영되고 있습�
 
 > SAP의 경우 여러개의 디스크를 할당하여 파티션하여 사
 
-![EBS &#xBCFC;&#xB968; &#xD560;&#xB2F9;\(&#xD658;&#xACBD; &#xB9C8;&#xB2E4; &#xB2E4;&#xB984;\)](.gitbook/assets/image%20%283%29.png)
+![](.gitbook/assets/image-16%20%281%29.png)
 
 #### Add Tags
 
 > Tag값을 이용하여 다양한 작업들을 할 수 있습니다. EBS 백업과 이중화 작업 시 Tag값을 설정하여야 하기 때문에 몹시 중요할 수 있는 단계입니다.
 
-![Tag &#xAC12; &#xC124;&#xC815;](.gitbook/assets/image%20%2896%29.png)
+![](.gitbook/assets/image-17%20%281%29.png)
 
 #### Configure Security Group
 
@@ -283,13 +281,13 @@ SAP A1의 경우 대부분 SuSE 혹은 Redhat 환경으로 운영되고 있습�
 Security Group은 따로 생성되어 있는게 없다면 AMI에 설정되어 있는 Default Security Group으로 생성할 수 있습니다.
 {% endhint %}
 
-![Security Group &#xC124;&#xC815;](.gitbook/assets/image%20%2874%29.png)
+![](.gitbook/assets/image-18%20%281%29.png)
 
-![&#xCD5C;&#xC885; &#xC124;&#xC815; Review &amp; Launch](.gitbook/assets/image%20%2817%29.png)
+![](.gitbook/assets/image-19.png)
 
 #### 키파일 생성 혹은 기존의 키파일 사용하여 인스턴스 설
 
-![](.gitbook/assets/image%20%2886%29.png)
+![](.gitbook/assets/image-20.png)
 
 > 키파일의 경우 고객의 요구에 따라 추가 생성하셔도 됩니다. 최근에는 AWS Session Manager를 이용하여 시스템 운영하는 고객사들이 많아지고 있으므로 고객의 요구에 맞춰 키파일 관리는 다르게 가져가시길 바랍니다.
 
@@ -297,13 +295,13 @@ Security Group은 따로 생성되어 있는게 없다면 AMI에 설정되어 �
 
 > EIP가 필요한 경우 다음과 같이 맵핑하여 사용하시면 됩니다.
 
-![Allocate new address](.gitbook/assets/image%20%28101%29.png)
+![](.gitbook/assets/image-21%20%281%29.png)
 
-![](.gitbook/assets/image%20%2823%29.png)
+![](.gitbook/assets/image-22%20%281%29.png)
 
-![Associate address](.gitbook/assets/image%20%2853%29.png)
+![](.gitbook/assets/image-23.png)
 
-![Instance &#xC120;&#xD0DD; &#xD6C4; Associate](.gitbook/assets/image%20%28119%29.png)
+![](.gitbook/assets/image-25%20%281%29.png)
 
 ## 시스템 관련 설정
 
