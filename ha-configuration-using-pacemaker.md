@@ -134,7 +134,7 @@
 
 ### Overlay IP Addresses 라우팅 테이블 추가
 
-![](.gitbook/assets/image%20%28117%29.png)
+![](.gitbook/assets/image%20%28118%29.png)
 
 ### Enable Cluster Instances to use the Overlay IP
 
@@ -343,7 +343,7 @@ colocation col_sap_HA1_no_both -5000: grp_HA1_ERS10 grp_HA1_ASCS00
 
 ![](.gitbook/assets/image%20%285%29.png)
 
-![](.gitbook/assets/image%20%2881%29.png)
+![](.gitbook/assets/image%20%2882%29.png)
 
 ## HANA DB Cluster
 
@@ -484,5 +484,5 @@ crm status
 
 #### 설정 완료 화면
 
-![](.gitbook/assets/image%20%28115%29.png)
+![](.gitbook/assets/image%20%28116%29.png)
 

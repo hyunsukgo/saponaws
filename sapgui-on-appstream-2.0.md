@@ -23,13 +23,13 @@ description: '#SAPGUI #AppStream 2.0'
 | Instance Type | 인스턴스 타입을 설정할 수 있습니다. \(Default : General Purpose\) |
 | Instance Family | 인스턴스 세대군\( stream.standard.medium 추천\) |
 
-![image builder](.gitbook/assets/image%20%28105%29.png)
+![](.gitbook/assets/image%20%2870%29.png)
 
-![image builder &#xC2E4;&#xD589;](.gitbook/assets/image%20%2811%29.png)
+![](.gitbook/assets/image-2%20%281%29.png)
 
-![](.gitbook/assets/image%20%289%29.png)
+![](.gitbook/assets/image-3%20%281%29.png)
 
-![](.gitbook/assets/image%20%2844%29.png)
+![](.gitbook/assets/image-4%20%281%29.png)
 
 ### Image Builder 환경 구성
 
@@ -41,23 +41,23 @@ description: '#SAPGUI #AppStream 2.0'
 | Security Group | 아무거나 선택하여도 무방 \(default\) |
 | Active Directory Domain | 이 설정은 필요 없습니다. |
 
-![](.gitbook/assets/image%20%2849%29.png)
+![](.gitbook/assets/image-5.png)
 
-![](.gitbook/assets/image%20%2835%29.png)
+![](.gitbook/assets/image-copy.png)
 
 ## Connect to the image builder and install application
 
-![](.gitbook/assets/image%20%28106%29.png)
+![](.gitbook/assets/image-7%20%281%29.png)
 
 ### Image Builder 연결
 
-![](.gitbook/assets/image%20%2852%29.png)
+![](.gitbook/assets/image-8%20%281%29.png)
 
 ![](.gitbook/assets/image%20%2864%29.png)
 
 ### Administrator로 접속
 
-![](.gitbook/assets/image%20%2879%29.png)
+![](.gitbook/assets/image%20%2880%29.png)
 
 ## Configure application
 
@@ -77,11 +77,11 @@ description: '#SAPGUI #AppStream 2.0'
 
 ![](.gitbook/assets/image%20%2839%29.png)
 
-![](.gitbook/assets/image%20%2883%29.png)
+![](.gitbook/assets/image%20%2884%29.png)
 
-![](.gitbook/assets/image%20%28104%29.png)
+![](.gitbook/assets/image%20%28105%29.png)
 
-![](.gitbook/assets/image%20%28109%29.png)
+![](.gitbook/assets/image%20%28110%29.png)
 
 ## Use image assistant to  create AppStream 2.0 image
 
@@ -99,13 +99,13 @@ description: '#SAPGUI #AppStream 2.0'
 
 ![](.gitbook/assets/image%20%2869%29.png)
 
-![](.gitbook/assets/image%20%2886%29.png)
+![](.gitbook/assets/image%20%2887%29.png)
 
 #### 실제 App 실행
 
-![App Launch](.gitbook/assets/image%20%28101%29.png)
+![App Launch](.gitbook/assets/image%20%28102%29.png)
 
-![](.gitbook/assets/image%20%2894%29.png)
+![](.gitbook/assets/image%20%2895%29.png)
 
 #### 다음과 같이 정상적으로 실행되는 것을 확인하였습니다.
 
@@ -122,17 +122,17 @@ description: '#SAPGUI #AppStream 2.0'
 
 ![](.gitbook/assets/image%20%2847%29.png)
 
-![](.gitbook/assets/image%20%2875%29.png)
+![](.gitbook/assets/image%20%2876%29.png)
 
 #### 다음과 같이 이미지가 생성되는 것을 확인하였습니다.
 
-![](.gitbook/assets/image%20%2834%29.png)
+![](.gitbook/assets/image-15%20%282%29.png)
 
-![](.gitbook/assets/image%20%2899%29.png)
+![](.gitbook/assets/image-16%20%281%29.png)
 
 ## Provision a fleet
 
-![](.gitbook/assets/image%20%2838%29.png)
+![](.gitbook/assets/image-17.png)
 
 | Option | Value |
 | :--- | :--- |
@@ -140,13 +140,13 @@ description: '#SAPGUI #AppStream 2.0'
 | Display Name | AWS Console상에서 보여지는 이름 |
 | Description | 설 |
 
-![](.gitbook/assets/image%20%282%29.png)
+![](.gitbook/assets/image-18.png)
 
 #### 생성된 이미지 확인
 
-![&#xC774;&#xBBF8;&#xC9C0; &#xC120;&#xD0DD;](.gitbook/assets/image%20%2897%29.png)
+![](.gitbook/assets/image-19%20%281%29.png)
 
-![](.gitbook/assets/image%20%283%29.png)
+![](.gitbook/assets/image-20%20%282%29.png)
 
 {% hint style="info" %}
 Fleet Type은 두가지 값을 설정 할 수 있습니다. User들의 사용량을 확인하여 설정하는 것을 추천합니다.
@@ -165,11 +165,11 @@ SAP GUI에서 인터넷 접근이 필요할 수 있기 때문에 인터넷 연�
 
 ![](.gitbook/assets/image%20%2867%29.png)
 
-![](.gitbook/assets/image%20%2887%29.png)
+![](.gitbook/assets/image-21.png)
 
-![](.gitbook/assets/image%20%2871%29.png)
+![](.gitbook/assets/image%20%2872%29.png)
 
-![](.gitbook/assets/image%20%28100%29.png)
+![](.gitbook/assets/image-22.png)
 
 ## Create an AppStream 2.0 stack and a streaming URL
 
@@ -187,23 +187,21 @@ Fleet은 사용자가 사용할 App 인스턴스라고 생각하시면 되고, S
 | Redirect URL | 세션 종료 후 리다이렉션 하고 싶은 페이지가 있다면 설정 |
 | Fleet | 연결하고 싶은 Fleet을 지 |
 
-![](.gitbook/assets/image%20%2821%29.png)
+![](.gitbook/assets/image-23%20%282%29.png)
 
 > AppStream 2.0경우 Application을 스트리밍으로 운영하기 때문에 저장소가 따로 필요한 경우 AWS S3에 저장하거나 다른 클라우드 스토리지\(Google Drive, OneDrive\)등을 사용할 수 있습니다.
 
-![](.gitbook/assets/image.png)
+![](.gitbook/assets/image-24%20%282%29.png)
 
-![](.gitbook/assets/image%20%287%29.png)
+![](.gitbook/assets/image-25%20%281%29.png)
 
-![](.gitbook/assets/image%20%2860%29.png)
-
-![](.gitbook/assets/image%20%2874%29.png)
+![](.gitbook/assets/image-27.png)
 
 ## Manage user access with an AppStream 2.0 user pool
 
 ### 사용자가 접근 할 수 있도록 User 생성
 
-![](.gitbook/assets/image%20%2814%29.png)
+![](.gitbook/assets/image-28%20%281%29.png)
 
 ![](.gitbook/assets/image%20%2827%29.png)
 
@@ -215,9 +213,9 @@ Fleet은 사용자가 사용할 App 인스턴스라고 생각하시면 되고, S
 
 ### User 생성 후 다음과 같이 메일이 포워딩 됩니다. Login Page를 클릭하여 Application을 실행 시키면 됩니다.
 
-![](.gitbook/assets/image%20%2895%29.png)
+![](.gitbook/assets/image%20%2896%29.png)
 
-![](.gitbook/assets/image%20%2885%29.png)
+![](.gitbook/assets/image%20%2886%29.png)
 
 ## Appendix
 
